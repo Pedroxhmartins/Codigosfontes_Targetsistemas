@@ -1,0 +1,22 @@
+package exercicios;
+
+public class Exercicios {
+
+	
+	    public static void main(String[] args) {
+	        // Inicialização das variáveis
+	        int INDICE = 12; // O limite superior para o loop
+	        int SOMA = 0;    // Inicializa a soma em 0
+	        int K = 1;       // Inicializa K com 1
+
+	        // Loop para calcular a soma dos números de 2 até INDICE-1
+	        while (K < INDICE) {
+	            K = K + 1;      // Incrementa K em 1
+	            SOMA = SOMA + K; // Adiciona o valor de K à SOMA
+	        }
+
+	        // Imprime o valor final da variável SOMA
+	        System.out.println(SOMA); // O valor esperado é 77
+	   
+	    }
+}
