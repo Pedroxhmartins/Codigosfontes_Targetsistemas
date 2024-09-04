@@ -1,0 +1,66 @@
+package exercicios;
+
+import java.util.Scanner;
+
+public class Exercicios {
+
+    public static void main(String[] args) {
+        // Inicializa o estado das lâmpadas e dos interruptores
+        boolean[] lamps = new boolean[3]; // false = apagada, true = ligada
+        boolean[] switches = new boolean[3]; // false = desligado, true = ligado
+
+        // Vamos simular os estados das lâmpadas
+        // Suponha que a lâmpada 0 é controlada pelo interruptor 1, lâmpada 1 pelo interruptor 2 e lâmpada 2 pelo interruptor 3.
+        lamps[0] = true; // Lâmpada 0 está ligada
+        lamps[1] = false; // Lâmpada 1 está apagada
+        lamps[2] = false; // Lâmpada 2 está apagada
+
+        // Simulação de ações com os interruptores
+        // Passo 1: Ligue o interruptor 1 e espere
+        switches[0] = true; // Interruptor 1 ligado
+        simulateWait();
+
+        // Passo 2: Desligue o interruptor 1 e ligue o interruptor 2
+        switches[0] = false; // Interruptor 1 desligado
+        switches[1] = true; // Interruptor 2 ligado
+
+        // Passo 3: Identifique as lâmpadas
+        identifyLamps(switches, lamps);
+    }
+
+    // Simula a espera para que a lâmpada aqueça
+    public static void simulateWait() {
+        // Em uma simulação real, você esperaria um tempo
+        // Aqui, estamos apenas simulando a espera sem um delay real
+    }
+
+    // Identifica qual interruptor controla qual lâmpada
+    public static void identifyLamps(boolean[] switches, boolean[] lamps) {
+        // Simulação dos estados das lâmpadas
+        boolean lamp1 = lamps[0];
+        boolean lamp2 = lamps[1];
+        boolean lamp3 = lamps[2];
+
+        // Simula o estado das lâmpadas
+        if (switches[1]) {
+            // Interruptor 2 está ligado
+            System.out.println("Lâmpada ligada (Interruptor 2)");
+        }
+        if (!switches[1] && !switches[0]) {
+            // Interruptor 1 estava ligado e agora está desligado
+            if (lamp1) {
+                System.out.println("Lâmpada aquecida e apagada (Interruptor 1)");
+            }
+            if (lamp2) {
+                System.out.println("Lâmpada aquecida e apagada (Interruptor 1)");
+            }
+            if (lamp3) {
+                System.out.println("Lâmpada aquecida e apagada (Interruptor 1)");
+            }
+        }
+        if (!switches[0] && !switches[1]) {
+            // Interruptor 3 não foi ligado
+            System.out.println("Lâmpada fria (Interruptor 3)");
+        }
+    }
+}
